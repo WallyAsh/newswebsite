@@ -1,0 +1,68 @@
+.service-portfolio .service-card {
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 400px; 
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.service-portfolio .service-card-body {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.25); /* Darker overlay for better legibility */
+  color: #ffffff; /* Ensure text is white for contrast */
+}
+
+.service-portfolio .service-card-body h2 {
+  font-size: 1.5rem; /* Larger font size for headers */
+  font-weight: bold; /* Optional: make the header bold */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.service-portfolio .service-card-body p {
+  font-size: 1rem; /* Larger font size for text */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.service-portfolio .service-card:hover {
+  transform: translateY(-30px); /* Move up the card on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-portfolio .service-card {
+    height: auto; /* For mobile devices, auto height could work better */
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+.service-title {
+  font-family: 'Montserrat', sans-serif; /* Montserrat is great for bold titles */
+  font-size: 5rem; /* Adjust the size as needed */
+  font-weight: 900; /* Montserrat supports extra bold weights */
+  color: #fff; /* White color for the text */
+  text-transform: uppercase; /* Capitalize all letters */
+  letter-spacing: -2px; /* Adjust letter spacing for a tight look */
+  line-height: 1; /* Adjust line height for tight text */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Subtle text shadow for depth */
+  margin-bottom: 50px;
+}
+
+.service-subtitle {
+  font-size: 2rem; /* Subtitle size */
+  color: #c8c8c8; /* Lighter color for the subtitle */
+  max-width: 800px; /* Max width to control the text block */
+  margin: 0 auto; /* Centering the subtitle */
+}
