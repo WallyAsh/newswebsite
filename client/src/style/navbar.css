@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: #00401A;
   padding: 1rem 2rem;
 }
 
@@ -16,13 +16,13 @@
   margin: 0 0.5rem;
   font-weight: bold;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: #00401A;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
 }
 
 .nav-item:hover {
-  background-color: #555;
+  background-color: #c4bebef7;
 }
 
 /* Responsive adjustments */

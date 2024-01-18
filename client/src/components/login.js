@@ -5,8 +5,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import '../style/login.css'; 
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import backgroundImg from '../media/ai.png';
-
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -41,25 +39,25 @@ const Login = () => {
   };
 
   return (
-    <div className="login" style={{ backgroundImage: `url(${backgroundImg})` }}>
+    <div className="login">
       <Navbar/>
       <div className="login-container">
-        <h1 className="login-title">Welcome Back!</h1>
+        <h1 className="login-title">Velkommen tilbake!</h1>
         <form className="login-form" onSubmit={handleLogin}>
-          <input type="email" placeholder="Email Address" required onChange={e => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" required onChange={e => setPassword(e.target.value)} />
-          <button type="submit">Log In</button>
+          <input type="email" placeholder="Email" required onChange={e => setEmail(e.target.value)} />
+          <input type="password" placeholder="Passord" required onChange={e => setPassword(e.target.value)} />
+          <button type="submit">Logg inn</button>
         </form>
         <div className="login-footer">
-          <p>New to Manage IT? <Link to="/signup">Sign Up</Link></p>
+          <p>Ny på Insaaf? <Link to="/signup">Opprett brukerkonto</Link></p>
         </div>
       </div>
 
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <p>Log In Successful!</p>
-            <button onClick={() => setShowModal(false)}>Close</button>
+            <p>Logg inn sukessfull!</p>
+            <button onClick={() => setShowModal(false)}>Lukk</button>
           </div>
         </div>
       )}

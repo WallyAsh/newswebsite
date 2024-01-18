@@ -55,26 +55,35 @@ const Contact = () => {
       <div className="parallax-section" id="contact-section1">
         <div className="parallax-content">
           <BsEnvelopeFill size={50} className="icon" />
-          <h1 className="display-3 text-with-shadow">Get in Touch</h1>
+          <h1 className="display-3 text-with-shadow">Hvorfor vi lagde insaaf</h1>
           <p className="lead text-with-shadow">
-            Reach out to us with your questions, concerns, and inquiries. Our team is ready to assist you with all your needs.
+            Det er stort mangel på informasjon om hva som skjer i Pakistan. Vi ønsker å gjøre det lettere for folk å få tilgang til nyheter fra Pakistan.
+          </p>
+        </div>
+      </div>
+      <div className="parallax-section" id="contact-section1">
+        <div className="parallax-content">
+          <BsEnvelopeFill size={50} className="icon" />
+          <h1 className="display-3 text-with-shadow">Kontakt oss</h1>
+          <p className="lead text-with-shadow">
+            Hvis du har noen spørsmål, noen feil du har funnet eller bare vil si hei, send oss en melding! Bla ned, og husk å logge inn!
           </p>
         </div>
       </div>
       <div className="parallax-section" id="contact-section2">
         <div className="parallax-content">
           <BsTelephoneFill size={50} className="icon" />
-          <h1 className="display-3 text-with-shadow">Contact Form</h1>
+          <h1 className="display-3 text-with-shadow">Kontaktskjema</h1>
           {isLoggedIn ? (
             <form className="contact-form" onSubmit={handleSubmit}>
               <textarea name="message" placeholder="Your Message" required></textarea>
-              <button type="submit">Send Message</button>
+              <button type="submit">Send melding</button>
             </form>
           ) : (
             <div className="locked-contact-form">
               <BsLockFill size={50} className="icon" />
-              <p>You must be logged in to send a message.</p>
-              <Link to="/login" className="login-link">Log In</Link>
+              <p>Du må være pålogget for å sende en melding</p>
+              <Link to="/login" className="login-link">Logg inn</Link>
             </div>
           )}
         </div>

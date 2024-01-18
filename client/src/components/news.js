@@ -1,31 +1,69 @@
-import React from 'react';
-import '../style/news.css'; 
-import { BsFillBriefcaseFill, BsFillPeopleFill, BsTrophy } from 'react-icons/bs'; 
+import React, { useState } from 'react';
 import Navbar from './navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../style/news.css';
+import pak1 from '../media/pak1.jpg';
+import pak2 from '../media/pak2.jpg';
 
 const News = () => {
+  const [filter, setFilter] = useState('');
+
+  const newsData = [
+    {
+      title: 'Imran Khan',
+      content: 'Embark on a journey of streamlined efficiency with our advanced project management tools and expertise. Transform your strategic vision into exemplary executions.',
+      background: pak1,
+    },
+    {
+      title: 'Pakistan Cricket',
+      content: 'Revolutionize your business with our AI-driven solutions to automate processes, glean insights from data, and create an ecosystem of smart operations tailored to your needs.',
+      background: pak2,
+    },
+    {
+      title: 'Bhera',
+      content: 'Fortify your digital landscape with our comprehensive cybersecurity protocols. Ensure your data\'s integrity and your infrastructures\' resilience from threats.',
+      background: pak1,
+    },
+    // Add more news items as needed
+    {
+      title: 'Bhera 2',
+      content: 'Fortify your digital landscape with our comprehensive cybersecurity protocols. Ensure your data\'s integrity and your infrastructures\' resilience from threats.',
+      background: pak2,
+    },
+    {
+      title: 'Bhera 3',
+      content: 'Fortify your digital landscape with our comprehensive cybersecurity protocols. Ensure your data\'s integrity and your infrastructures\' resilience from threats.',
+      background: pak1,
+    },
+  ];
+
+  const filteredNews = newsData.filter((news) =>
+    news.title.toLowerCase().includes(filter.toLowerCase())  );
+
   return (
-    <div className="about">
-      <Navbar/>
-      <div className="parallax-section" id="section1">
-        <div className="parallax-content">
-          <BsFillBriefcaseFill size={50} className="icon" />
-          <h1 className="display-3 text-with-shadow">Decade of Expertise</h1>
-          <p className="lead text-with-shadow"> Founded in the early days of the digital revolution, Manage IT has a rich history of pioneering innovative IT solutions. Our extensive experience is the bedrock upon which we build success for our clients.</p>
+    <div className="service-portfolio">
+      <Navbar />
+      <div className="container text-center text-red my-5">
+        <h1 className="service-title"> NYHTER BASERT PÅ FILTER</h1>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Filtrer basert på søkeord..."
+            onChange={(e) => setFilter(e.target.value)}
+          />
         </div>
-      </div>
-      <div className="parallax-section" id="section2">
-        <div className="parallax-content">
-          <BsFillPeopleFill size={50} className="icon" />
-          <h1 className="display-3 text-with-shadow">Trusted by Industry Leaders</h1>
-          <p className="lead text-with-shadow">Our reputation as project leaders has been cemented through partnerships with major Norwegian companies. Our commitment to excellence is recognized across the industry.</p>
-        </div>
-      </div>
-      <div className="parallax-section" id="section3">
-        <div className="parallax-content">
-          <BsTrophy size={50} className="icon" />
-          <h1 className="display-3 text-with-shadow">Commitment to Success</h1>
-          <p className="lead text-with-shadow">We believe in creating value and delivering excellence. Our team's dedication to driving success has made us a beacon of innovation in IT consultancy.</p>
+        <div className="row">
+          {filteredNews.map((item, index) => (
+            <div key={index} className="col-md-6 col-lg-3 mb-4">
+              <div className="service-card" style={{ backgroundImage: `url(${item.background})` }}>
+                <div className="service-card-body">
+                  <h2>{item.title}</h2>
+                  <p>{item.content}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

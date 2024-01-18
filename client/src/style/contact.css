@@ -1,79 +1,96 @@
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px; 
-    margin: auto;
-  }
-  
-  .contact-form textarea {
-    padding: 15px; /* Padding inside the textarea */
-    margin-top: 10px; /* Space above the textarea */
-    margin-bottom: 20px; /* Space below the textarea */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 4px; /* Rounded corners */
-    resize: vertical; /* Allows the user to vertically resize the textarea */
-    min-height: 150px; /* Minimum height */
-    font-size: 16px; /* Text size within the textarea */
-    font-family: 'Arial', sans-serif; 
-  }
-  
-  /* Styling for the button */
-  .contact-form button {
-    padding: 10px 20px;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-form button:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-  }
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; 
+  margin: auto;
+}
 
-  #contact-section1::after, #contact-section2::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../media/contact.png') center center no-repeat fixed; 
-    background-size: cover;
-    opacity: 0.75; /* Adjust the opacity as needed */
-    z-index: -1;
-  }
+.contact-form textarea {
+  padding: 15px; /* Padding inside the textarea */
+  margin-top: 10px; /* Space above the textarea */
+  margin-bottom: 20px; /* Space below the textarea */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  resize: vertical; /* Allows the user to vertically resize the textarea */
+  min-height: 150px; /* Minimum height */
+  font-size: 16px; /* Text size within the textarea */
+  font-family: 'Arial', sans-serif; 
+}
 
-  .locked-contact-form {
-    text-align: center;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    border-radius: 4px;
-    color: white;
-  }
+/* Styling for the button */
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+#contact-section1::after, #contact-section2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  opacity: 0.75; /* Adjust the opacity as needed */
+  z-index: -1;
+}
+
+.locked-contact-form {
+  text-align: center;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  border-radius: 4px;
+  color: white;
+}
+
+.locked-contact-form .icon {
+  margin-bottom: 20px;
+}
+
+.locked-contact-form p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.login-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.parallax-section {
+  height: 100vh; /* Full height */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.parallax-content {
+  position: absolute;
+  top: 40%;
+  left: 49.4%;
+  transform: translate(-50%, -50%);
+  color: #00401A;
+  text-align: center;
+}
+
   
-  .locked-contact-form .icon {
-    margin-bottom: 20px;
-  }
-  
-  .locked-contact-form p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .login-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-link:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-  }
   

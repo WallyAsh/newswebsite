@@ -47,7 +47,6 @@ function Navbar() {
         <Link to="/news" className="nav-item">NYHETER</Link>
         <Link to="/forum" className="nav-item">DISKUSJONSFORUM</Link>
         <Link to="/contact" className="nav-item">OM OSS</Link>
-        <Link to="/" className="nav-item">BRUKERINFO</Link>
         {isAdmin && <Link to="/admin" className="nav-item">ADMIN DASHBOARD</Link>}
       </div>
       <div className="nav-items">
@@ -55,7 +54,7 @@ function Navbar() {
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <Link onClick={handleSignOut} className="nav-item" style={{cursor: 'pointer'}}>SIGN OUT</Link>
         ) : (
-          <Link to="/login" className="nav-item">LOGG IN</Link>
+          <Link to="/login" className="nav-item">LOGG INN</Link>
         )}
         {showModal && (
         <div className="modal">

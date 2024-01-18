@@ -5,7 +5,6 @@ import { auth } from '../firebase';
 import '../style/signup.css';
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundImg from '../media/ai.png'; 
 import { Link } from 'react-router-dom';
 
 
@@ -33,25 +32,25 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup" style={{ backgroundImage: `url(${backgroundImg})` }}>
+    <div className="signup">
       <Navbar />
       <div className="signup-container">
-        <h1 className="signup-title">Create Account</h1>
+        <h1 className="signup-title">Opprett brukerkonto</h1>
         <form className="signup-form" onSubmit={handleSignup}>
-          <input type="email" placeholder="Email Address" required onChange={e => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" required onChange={e => setPassword(e.target.value)} />
-          <button type="submit">Sign Up</button>
+          <input type="email" placeholder="Email" required onChange={e => setEmail(e.target.value)} />
+          <input type="password" placeholder="Passord" required onChange={e => setPassword(e.target.value)} />
+          <button type="submit">Opprett</button>
         </form>
         <div className="signup-footer">
-          <p>Already have an account? <Link to="/login">Log In</Link></p>
+          <p>Har du allerede en brukerkonto? <Link to="/login">Logg inn</Link></p>
         </div>
       </div>
 
       {showModal && (
         <div className="modal">
           <div className="modal-content">
-            <p>Account created successfully!</p>
-            <button onClick={() => setShowModal(false)}>Close</button>
+            <p>Brukerkonto opprettet!</p>
+            <button onClick={() => setShowModal(false)}>Lukk</button>
           </div>
         </div>
       )}

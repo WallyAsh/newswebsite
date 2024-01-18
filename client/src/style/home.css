@@ -36,7 +36,7 @@
 }
 
 .service-portfolio .service-card:hover {
-  transform: translateY(-30px); /* Move up the card on hover */
+  transform: translateY(-10px); /* Move up the card on hover */
 }
 
 /* Responsive adjustments */
@@ -52,7 +52,7 @@
   font-family: 'Montserrat', sans-serif; /* Montserrat is great for bold titles */
   font-size: 5rem; /* Adjust the size as needed */
   font-weight: 900; /* Montserrat supports extra bold weights */
-  color: #e62222; /* White color for the text */
+  color: #00401A; /* White color for the text */
   text-transform: uppercase; /* Capitalize all letters */
   letter-spacing: -2px; /* Adjust letter spacing for a tight look */
   line-height: 1; /* Adjust line height for tight text */
