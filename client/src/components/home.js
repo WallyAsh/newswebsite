@@ -24,7 +24,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-6 col-lg-3 mb-4">
-            <div className="service-card" style={{ backgroundImage: `url(${pak2})` }}>
+            <div className="service-card" a="/forum" style={{ backgroundImage: `url(${pak2})` }}>
               <div className="service-card-body">
                 <h2 >Imran Khan</h2>
                 <p>Embark on a journey of streamlined efficiency with our advanced project management tools and expertise. Transform your strategic vision into exemplary executions.</p>
