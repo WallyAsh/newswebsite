@@ -10,6 +10,8 @@ import Login from "./components/login";
 import Navbar from "./components/navbar";
 import SignUp from "./components/signup";
 import AdminDashboard from "./components/admin";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 
