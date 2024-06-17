@@ -4,11 +4,18 @@ from bs4 import BeautifulSoup
 from openai import OpenAI
 from dotenv import load_dotenv
 import json
+import firebase_admin
+from firebase_admin import credentials, firestore
 import bbc
-
+from datetime import datetime
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Initialize Firestore with Firebase Admin SDK
+cred = credentials.Certificate("serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 # Function to fetch BBC Urdu news using the API
 def fetch_bbc_urdu_news():
@@ -21,8 +28,8 @@ def fetch_bbc_urdu_news():
         for news_dict in section_news:
             title = news_dict['title']
             link = news_dict['news_link']
-            # Check if the title contains 'Imran Khan'
-            if 'عمران خان' in title:
+            # Check if the title contains 'عمران خان'
+            if 'سمیت' in title:
                 news_stories.append({"title": title, "link": link})
                 if len(news_stories) >= 15:
                     break
@@ -81,6 +88,20 @@ def translate_and_summarize(title, text, client):
     
     return translated_title, summary
 
+# Function to save articles directly to Firestore
+def save_articles_to_firestore(articles):
+    for article in articles:
+        article['timestamp'] = datetime.now()
+        db.collection("articles").add(article)
+        print(f"Article {article['title']} saved to Firestore.")
+
+# Function to check if an article already exists in Firestore
+def article_exists(link):
+    articles_ref = db.collection("articles")
+    query = articles_ref.where("link", "==", link).limit(1)
+    results = query.get()
+    return len(results) > 0
+
 # Main function to fetch, translate, summarize, and save news
 def main():
     api_key = os.getenv("OPENAI_API_KEY")
@@ -97,17 +118,22 @@ def main():
         title = story['title']
         link = story['link']
         
+        if article_exists(link):
+            print(f"Article with link {link} already exists. Skipping...")
+            continue
+        
         article_text = fetch_article_text(link)
         translated_title, translated_and_summarized_text = translate_and_summarize(title, article_text, client)
         
         articles.append({
             "title": translated_title,
             "link": link,
-            "summary": translated_and_summarized_text
+            "summary": translated_and_summarized_text,
+            "timestamp": datetime.now()
         })
     
-    with open('articles_imran_khan.json', 'w') as f:
-        json.dump(articles, f, ensure_ascii=False, indent=4)
+    # Save articles directly to Firestore
+    save_articles_to_firestore(articles)
 
 if __name__ == "__main__":
     main()
