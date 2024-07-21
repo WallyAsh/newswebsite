@@ -1,0 +1,56 @@
+.service-portfolio {
+    padding: 20px;
+  }
+  
+  .service-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .filter-input {
+    margin-bottom: 20px;
+  }
+  
+  .service-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    position: relative;
+  }
+  
+  .service-card::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .service-card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  }
+  
+  .service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(227, 77, 77);
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    align-self: start;
+  }

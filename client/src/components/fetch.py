@@ -13,7 +13,8 @@ from datetime import datetime
 load_dotenv()
 
 # Initialize Firestore with Firebase Admin SDK
-cred = credentials.Certificate("serviceAccountKey.json")
+cred_path = os.path.join(os.path.dirname(__file__), 'serviceAccountKey.json')
+cred = credentials.Certificate(cred_path)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -29,7 +30,7 @@ def fetch_bbc_urdu_news():
             title = news_dict['title']
             link = news_dict['news_link']
             # Check if the title contains 'عمران خان'
-            if 'سمیت' in title:
+            if 'عمران خان' in title:
                 news_stories.append({"title": title, "link": link})
                 if len(news_stories) >= 15:
                     break
@@ -59,7 +60,7 @@ def translate_and_summarize(title, text, client):
     "{title}"
 
     2. Summarize the article IN NORWEGIAN, ensuring the translation is accurate and maintains the original meaning and context. 
-    Then, create a concise summary of 500-600 words, highlighting the key points and important information. 
+    Then, create a concise summary of 400-500 words, highlighting the key points and important information. 
     The summary should be written in a clear, informative, and neutral tone suitable for a news website aimed at a Norwegian audience.
 
     Make sure to:
@@ -79,7 +80,10 @@ def translate_and_summarize(title, text, client):
       messages=[
         {"role": "system", "content": "You are a highly skilled translator and summarizer with expertise in both Urdu and Norwegian."},
         {"role": "user", "content": prompt}
-      ]
+      ],
+      max_tokens=4096,  # Adjust this based on your needs
+      stop=None,
+      temperature=0.7,
     )
     
     output = response.choices[0].message.content.split("\n\n", 1)
@@ -113,7 +117,7 @@ def main():
     
     articles = []
     
-    # Process the first five articles about Imran Khan
+    # Proessesser første 5 nyheter ppå BBC
     for story in news_stories:
         title = story['title']
         link = story['link']
@@ -132,7 +136,7 @@ def main():
             "timestamp": datetime.now()
         })
     
-    # Save articles directly to Firestore
+    # Lagrer til Firestore
     save_articles_to_firestore(articles)
 
 if __name__ == "__main__":

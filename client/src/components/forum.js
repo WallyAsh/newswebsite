@@ -88,12 +88,7 @@ const Forum = () => {
   );
 
   return (
-    <div className="service-portfolio">
-      <Navbar />
-      <div className="container text-center text-white my-5">
-        <h1 className="service-title">DISKUSJONSFORUM</h1>
-      </div>
-
+    /*
       <div className="container">
         <div className="row mb-3">
           <div className="col-md-8 offset-md-2 d-flex justify-content-between align-items-center">
@@ -160,6 +155,13 @@ const Forum = () => {
             )}
           </ul>
         )}
+      </div>
+    </div>
+    */
+    <div className="service-portfolio">
+      <Navbar/>
+      <div className="container text-center text-white my-5">
+        <h1 className="service-title">DISKUSJONSFORUM KOMMER SNART!</h1>
       </div>
     </div>
   );

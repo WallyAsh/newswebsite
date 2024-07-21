@@ -43,7 +43,7 @@ const Home = () => {
           ) : (
             articles.map((article, index) => (
               <div key={index} className="col-md-6 col-lg-4 mb-4">
-                <div className="service-card" style={{ backgroundImage: `url(${pak2})` }}>
+                <div className="service-card" style={{ backgroundImage: `url(${pak2})`, opacity: '25' }}>
                   <div className="service-card-body">
                     <h2>{article.title}</h2>
                     <p>{article.summary.substring(0, 100)}...</p>
