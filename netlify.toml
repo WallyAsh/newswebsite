@@ -1,0 +1,7 @@
+[build]
+  base = "client" # Set the base directory to client
+  publish = "client/build" # Set the publish directory to the build output
+  command = "npm install && npm run build" # Install dependencies and build the project
+
+[context.production.environment]
+  NODE_VERSION = "20.9.0" 
