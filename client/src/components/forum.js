@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/forum.css';
@@ -157,7 +157,7 @@ const Forum = () => {
         )}
       </div>
     </div>
-    */
+    
     <div className="service-portfolio">
       <Navbar/>
       <div className="container text-center text-white my-5">
@@ -168,3 +168,4 @@ const Forum = () => {
 };
 
 export default Forum;
+*/
