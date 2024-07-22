@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/home.css';
 import Navbar from './navbar';
@@ -13,7 +13,7 @@ const Home = () => {
     const fetchArticles = async () => {
       try {
         // Query Firestore to get the latest articles
-        const q = query(collection(db, "articles"), orderBy("timestamp", "desc"), limit(5));
+        const q = query(collection(db, "articles"), orderBy("timestamp", "desc"), limit(10));
         const querySnapshot = await getDocs(q);
 
         // Map the documents to article objects

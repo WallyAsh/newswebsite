@@ -30,11 +30,10 @@ def fetch_bbc_urdu_news():
             title = news_dict['title']
             link = news_dict['news_link']
             # Check if the title contains 'عمران خان'
-            if 'عمران خان' in title:
-                news_stories.append({"title": title, "link": link})
-                if len(news_stories) >= 15:
-                    break
-        if len(news_stories) >= 15:
+            news_stories.append({"title": title, "link": link})
+            if len(news_stories) >= 10:
+                break
+        if len(news_stories) >= 10:
             break
     
     return news_stories
